@@ -123,8 +123,9 @@ function App() {
 
   const getRewardsList = async () => {
     const response = await getRewards();
-    setTransactionData(response);
-  }
+    const results = calculateResults(response);
+    setTransactionData(results);
+  };
 
   useEffect(() => {
     getRewardsList();
